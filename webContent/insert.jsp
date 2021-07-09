@@ -13,19 +13,12 @@
 	String name = request.getParameter("name");
 	String password = request.getParameter("password");
 	String content = request.getParameter("content");
-	String reg_date = request.getParameter("reg_date");
-	
-	System.out.println(name + password + content + reg_date);
 
-	GuestbookVo guestbookVo = new GuestbookVo(name, password, content, reg_date);
+	GuestbookVo guestbookVo = new GuestbookVo(name, password, content);
 	
 	GuestbookDao guestbookDao = new GuestbookDao();
 	
 	guestbookDao.guestbookInsert(guestbookVo);
-	
-	List<GuestbookVo> guestbookList = guestbookDao.getGuestbookList();
-	
-	System.out.println(guestbookList.toString());
 	
 	response.sendRedirect("./list.jsp");
 	

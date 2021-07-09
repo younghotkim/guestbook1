@@ -73,13 +73,13 @@ public class GuestbookDao {
 			
 			String query="";
 			query += " insert into guestbook ";
-			query += " values(seq_no.nextval, ?, ?, ?, sysdate )";
+			query += " values(seq_no.nextval, ?, ?, ?, sysdate ) ";
 			
 			pstmt = conn.prepareStatement(query);
 			
 			pstmt.setString(1, guestbookVo.getName());
-			pstmt.setString(1, guestbookVo.getPassword());
-			pstmt.setString(1, guestbookVo.getContent());
+			pstmt.setString(2, guestbookVo.getPassword());
+			pstmt.setString(3, guestbookVo.getContent());
 			
 			count = pstmt.executeUpdate();
 			
@@ -145,7 +145,7 @@ public class GuestbookDao {
 	
 	//DELETE
 	
-	public int guestbookDelete(int no) {
+	public int guestbookDelete(int no, String password) {
 		
 		int count = -1;
 		
@@ -156,10 +156,12 @@ public class GuestbookDao {
 			String query = "";
 			query += " delete from guestbook ";
 			query += " where no = ? ";
+			query += " and password = ? ";
 			
 			pstmt = conn.prepareStatement(query);
 			
 			pstmt.setInt(1, no);
+			pstmt.setString(2, password);
 			
 			count = pstmt.executeUpdate();
 			
@@ -191,7 +193,7 @@ public class GuestbookDao {
 			query += "       name,";
 			query += "   password,";
 			query += "    content,";
-			query += "    eg_date";
+			query += "    reg_date";
 			query += "  from guestbook";
 			query += "  where no = ? ";
 			
@@ -231,7 +233,7 @@ public class GuestbookDao {
 		
 	}
 	
-	
+
 	
 	
 	

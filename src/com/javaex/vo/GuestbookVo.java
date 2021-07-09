@@ -28,6 +28,13 @@ public class GuestbookVo {
 		this.content = content;
 		this.reg_date = reg_date;
 	}
+	
+	public GuestbookVo(String name, String password, String content) {
+		super();
+		this.name = name;
+		this.password = password;
+		this.content = content;
+	}
 
 	public int getNo() {
 		return no;

@@ -1,7 +1,8 @@
 <%@page import="com.javaex.vo.GuestbookVo"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
+<%@page import="java.util.List"%>
+<%@page import="java.util.ArrayList"%>
 <%@ page import="com.javaex.dao.*" %>  
 
 <%
@@ -13,17 +14,18 @@
 	
 	int no = Integer.parseInt(request.getParameter("no"));
 	
-	GuestbookVo guestbookVo = guestbookDao.getGuest(no);
 	
-	if (password.equals(guestbookVo.getPassword())) {
-	
-	int count = guestbookDao.guestbookDelete(no);
+	List<GuestbookVo> guestbookList = guestbookDao.getGuestbookList();
 	
 	
-	response.sendRedirect("./list.jsp");
-
 	
-	}
+		
+		guestbookDao.guestbookDelete(no, password);
+		
+		response.sendRedirect("./list.jsp");
+		
+	
+	
 	//if (pass.equals(guestbookVo.getPassword())) {
 	
 	//int count = guestbookDao.guestbookDelete(no);
@@ -45,6 +47,8 @@
 <title>Insert title here</title>
 </head>
 <body>
+
+
 
 </body>
 </html>
