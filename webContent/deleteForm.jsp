@@ -9,11 +9,10 @@
 
 	GuestbookDao guestbookDao = new GuestbookDao();
 
-	List<GuestbookVo> guestbookList = guestbookDao.getGuestbookList();
+
 	
 	int no = Integer.parseInt(request.getParameter("no"));
 	
-	GuestbookVo guestbookVo = guestbookDao.getGuest(no);
 
 
 

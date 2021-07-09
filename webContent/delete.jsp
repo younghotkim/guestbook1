@@ -14,9 +14,7 @@
 	
 	int no = Integer.parseInt(request.getParameter("no"));
 	
-	
-	List<GuestbookVo> guestbookList = guestbookDao.getGuestbookList();
-	
+
 	
 	
 		

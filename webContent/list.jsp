@@ -32,10 +32,10 @@
 			
 	<form action="./insert.jsp" method="get">
 	
-		이름: <input type="text" name="name" value=""> 비밀번호: <input type="password" name="name" value="">
+		이름: <input type="text" name="name" value=""> 비밀번호: <input type="password" name="password" value="">
 		<br><br>
 		<textarea rows="10" cols="30" name="content" value=""></textarea>
-		<input type="hidden" name="reg_date" value="sysdate">
+	
 		
 		<button type="submit">등록</button>
 	
