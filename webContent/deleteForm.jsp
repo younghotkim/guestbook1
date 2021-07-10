@@ -13,6 +13,9 @@
 	
 	int no = Integer.parseInt(request.getParameter("no"));
 	
+	
+	//리스트 출력 불필요.
+	
 
 
 

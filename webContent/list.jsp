@@ -35,6 +35,8 @@
 		이름: <input type="text" name="name" value=""> 비밀번호: <input type="password" name="password" value="">
 		<br><br>
 		<textarea rows="10" cols="30" name="content" value=""></textarea>
+		
+		<!-- name값 조심해서 입력 -->
 	
 		
 		<button type="submit">등록</button>

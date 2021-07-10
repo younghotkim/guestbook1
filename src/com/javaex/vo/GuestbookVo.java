@@ -11,6 +11,8 @@ public class GuestbookVo {
 	public GuestbookVo () {
 		
 	}
+	
+	//필요한 생성자는 상황에 맞게 만들기
 
 	public GuestbookVo(int no, String name, String password, String content, String reg_date) {
 		super();
